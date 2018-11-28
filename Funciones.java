@@ -1,27 +1,26 @@
 import java.io.*;
+import java.util.*;
+
 
 public class Funciones {
     public static void main(String[] args) {
         String filename = "funciones.txt";
-        String line = null;
-
+        List<String> funciones = new ArrayList<String>();
         try {
-            // Abriendo el archivo funciones.txt
-            FileReader lector = new FileReader(filename)
-            // Buffer de lectura
+            FileReader lector = new FileReader(filename);
+            BufferedReader reader = new BufferedReader(lector);
+            String line;
+            while((line = reader.readLine())!=null){
+                System.out.println(line);
+                funciones.add(line);
+            }
+            reader.close();
+            return;
+        } catch (Exception e) {
+            System.err.format("Excepcion tratando de leer o abrir: '%s'.",filename);
+            e.printStackTrace();
+            return;
+        }
 
-        } 
-        catch (FileNotFoundException ex) {
-            // Error en apertura del archivo
-            System.out.println(
-                "No se pudo abrir el archivo '" +
-                filename + "'");
-        }
-        catch (IOException ex) {
-            // Error en la lectura del archivo
-            System.out.println(
-                "Error leyendo el archivo '" +
-                filename + "'");
-        }
     }
 }
