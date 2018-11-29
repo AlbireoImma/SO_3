@@ -5,7 +5,7 @@ public class Promotor extends Thread {
     private int atendidos;
     private Venta venta = null;
     private PrintStream out = null;
-    Scanner reader = null;
+    private Scanner reader = null;
 
     Promotor(Venta venta, Scanner reader) {
         this.venta = venta;
@@ -33,7 +33,7 @@ public class Promotor extends Thread {
                     System.out.println(fase_1);
                     System.out.println(fase_2);
                     try {
-                        out = new PrintStream(new FileOutputStream("log_Promotor", true));
+                        out = new PrintStream(new FileOutputStream("log_Promotor.txt", true));
                     } catch (Exception e) {
                         // TODO: handle exception
                     } finally {
@@ -51,7 +51,7 @@ public class Promotor extends Thread {
                     System.out.println(fase_1);
                     System.out.println(fase_2);
                     try {
-                        out = new PrintStream(new FileOutputStream("log_Promotor", true));
+                        out = new PrintStream(new FileOutputStream("log_Promotor.txt", true));
                     } catch (Exception e) {
                         // TODO: handle exception
                     } finally {
@@ -69,7 +69,7 @@ public class Promotor extends Thread {
                     System.out.println(fase_1);
                     System.out.println(fase_2);
                     try {
-                        out = new PrintStream(new FileOutputStream("log_Promotor", true));
+                        out = new PrintStream(new FileOutputStream("log_Promotor.txt", true));
                     } catch (Exception e) {
                         // TODO: handle exception
                     } finally {
@@ -82,7 +82,7 @@ public class Promotor extends Thread {
                             + " sin compra por parte del cliente";
                     System.out.println(fase);
                     try {
-                        out = new PrintStream(new FileOutputStream("log_Promotor", true));
+                        out = new PrintStream(new FileOutputStream("log_Promotor.txt", true));
                     } catch (Exception e) {
                         // TODO: handle exception
                     } finally {
