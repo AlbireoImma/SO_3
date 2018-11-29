@@ -40,6 +40,34 @@ public class Venta {
             turno = A;
         }
     }
+    public int GetTurno(){
+        synchronized(this){
+            return turno;
+        }
+    }
+    public int GetValor(){
+        synchronized(this){
+            return valor;
+        }
+    }
+    public String GetCliente(){
+        synchronized(this){
+            return cliente;
+        }
+    }
+    public String GetProducto(){
+        synchronized(this){
+            return producto;
+        }
+    }
+    public String GetFecha_(){
+        synchronized(this){
+            return fecha;
+        }
+    }
+    public void PrintProductos(){
+        productos.PrintProductos();
+    }
 }
 
 //String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
