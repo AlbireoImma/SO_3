@@ -4,6 +4,7 @@ public class Venta {
     private String cliente="";
     private String producto="";
     private String fecha="";
+    private Productos productos = new Productos();
     
     public String GetFecha(){
         return new SimpleDateFormat("HH:mm:ss dd/MM/yyyy").format(Calendar.getInstance().getTime());
@@ -24,7 +25,20 @@ public class Venta {
         }
     }
     public void SetProducto(String A){
-        producto = A;
+        synchronized(this){
+            producto = A;
+        }
+    }
+    public void AddTurno(){
+        synchronized(this){
+            turno++;
+            turno %= 4;
+        }
+    }
+    public void SetTurno(int A){
+        synchronized(this){
+            turno = A;
+        }
     }
 }
 
