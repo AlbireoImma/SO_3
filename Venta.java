@@ -1,3 +1,6 @@
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class Venta {
     private int turno=0;
     private int valor=0;
@@ -67,6 +70,16 @@ public class Venta {
     }
     public void PrintProductos(){
         productos.PrintProductos();
+    }
+    public String GetNombreProductos(int index){
+        synchronized(this){
+            return productos.GetNombre(index);
+        }
+    }
+    public int GetPrecioProductos(int index){
+        synchronized(this){
+            return productos.GetPrecio(index);
+        }
     }
 }
 
