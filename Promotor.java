@@ -27,6 +27,7 @@ public class Promotor extends Thread {
                     atendidos++;
                     System.out.println("[" + venta.GetFecha() + "][Promotor] Atendio a " + venta.GetCliente()
                             + ", mediante la compra de " + venta.GetProducto());
+                    System.out.println("[" + venta.GetFecha() + "][Promotor] Clientes atendidos: " + atendidos);
                     venta.AddTurno();
                 } else if (n == 2) {
                     venta.SetProducto(venta.GetNombreProductos(n - 1));
