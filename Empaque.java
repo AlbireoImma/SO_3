@@ -14,7 +14,9 @@ public class Empaque extends Thread {
         Thread.currentThread().setName("Empaque");
         while (true) {
             if (venta.GetTurno() == 3) {
-                System.out.println("[" + venta.GetFecha() + "][Empaque] Paso por Empaque");
+                System.out.println("[" + venta.GetFecha() + "][Empaque] Empaque de " + venta.GetProducto());
+                empacados++;
+                System.out.println("[" + venta.GetFecha() + "][Empaque] Productos empacados: " + empacados);
                 venta.AddTurno();
             }
         }
