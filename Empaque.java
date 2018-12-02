@@ -15,6 +15,13 @@ public class Empaque extends Thread {
 
     public void run() {
         Thread.currentThread().setName("Empaque");
+        try {
+            out = new PrintStream(new FileOutputStream("log_Empaque.txt", true));
+        } catch (Exception e) {
+            // TODO: handle exception
+        } finally {
+            out.println("=============================== "+ venta.GetFecha() +" ===============================");
+        }
         while (true) {
             if (venta.GetTurno() == 3) {
                 empacados++;

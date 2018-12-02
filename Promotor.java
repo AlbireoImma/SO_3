@@ -15,6 +15,13 @@ public class Promotor extends Thread {
 
     public void run() {
         Thread.currentThread().setName("Promotor");
+        try {
+            out = new PrintStream(new FileOutputStream("log_Promotor.txt", true));
+        } catch (Exception e) {
+            // TODO: handle exception
+        } finally {
+            out.println("=============================== "+ venta.GetFecha() +" ===============================");
+        }
         while (true) {
             if (venta.GetTurno() == 1) {
                 System.out.println("[" + venta.GetFecha() + "][Promotor] '" + venta.GetCliente()

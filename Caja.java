@@ -15,6 +15,13 @@ public class Caja extends Thread {
 
     public void run() {
         Thread.currentThread().setName("Caja");
+        try {
+            out = new PrintStream(new FileOutputStream("log_Caja.txt", true));
+        } catch (Exception e) {
+            // TODO: handle exception
+        } finally {
+            out.println("=============================== "+ venta.GetFecha() +" ===============================");
+        }
         while (true) {
             if (venta.GetTurno() == 2) {
                 String fase_1 = "[" + venta.GetFecha() + "][Caja] Atiende a " + venta.GetCliente()
