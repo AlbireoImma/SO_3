@@ -18,7 +18,7 @@ public class Caja extends Thread {
         try {
             out = new PrintStream(new FileOutputStream("log_Caja.txt", true));
         } catch (Exception e) {
-            // TODO: handle exception
+            e.printStackTrace();
         } finally {
             out.println("=============================== "+ venta.GetFecha() +" ===============================");
         }
@@ -42,7 +42,7 @@ public class Caja extends Thread {
                     try {
                         out = new PrintStream(new FileOutputStream("log_Caja.txt", true));
                     } catch (Exception e) {
-                        // TODO: handle exception
+                        e.printStackTrace();
                     } finally {
                         out.println(fase_2);
                         out.println(fase_3);
@@ -58,7 +58,7 @@ public class Caja extends Thread {
                     try {
                         out = new PrintStream(new FileOutputStream("log_Caja.txt", true));
                     } catch (Exception e) {
-                        // TODO: handle exception
+                        e.printStackTrace();
                     } finally {
                         out.println(fase_2);
                         out.println(fase_3);
@@ -72,7 +72,7 @@ public class Caja extends Thread {
                     try {
                         out = new PrintStream(new FileOutputStream("log_Caja.txt", true));
                     } catch (Exception e) {
-                        // TODO: handle exception
+                        e.printStackTrace();
                     } finally {
                         out.println(fase_2);
                         out.println(fase_3);
@@ -80,7 +80,7 @@ public class Caja extends Thread {
                     try {
                         out = new PrintStream(new FileOutputStream("log_Cliente.txt", true));
                     } catch (Exception e) {
-                        // TODO: handle exception
+                        e.printStackTrace();
                     } finally {
                         out.println("[" + venta.GetFecha() + "][Cliente] " + venta.GetCliente() + " sale de la tienda");
                     }

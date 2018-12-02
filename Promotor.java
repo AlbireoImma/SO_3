@@ -18,7 +18,7 @@ public class Promotor extends Thread {
         try {
             out = new PrintStream(new FileOutputStream("log_Promotor.txt", true));
         } catch (Exception e) {
-            // TODO: handle exception
+            e.printStackTrace();
         } finally {
             out.println("=============================== "+ venta.GetFecha() +" ===============================");
         }
@@ -42,7 +42,7 @@ public class Promotor extends Thread {
                     try {
                         out = new PrintStream(new FileOutputStream("log_Promotor.txt", true));
                     } catch (Exception e) {
-                        // TODO: handle exception
+                        e.printStackTrace();
                     } finally {
                         out.println(fase_1);
                         out.println(fase_2);
@@ -60,7 +60,7 @@ public class Promotor extends Thread {
                     try {
                         out = new PrintStream(new FileOutputStream("log_Promotor.txt", true));
                     } catch (Exception e) {
-                        // TODO: handle exception
+                        e.printStackTrace();
                     } finally {
                         out.println(fase_1);
                         out.println(fase_2);
@@ -78,7 +78,7 @@ public class Promotor extends Thread {
                     try {
                         out = new PrintStream(new FileOutputStream("log_Promotor.txt", true));
                     } catch (Exception e) {
-                        // TODO: handle exception
+                        e.printStackTrace();
                     } finally {
                         out.println(fase_1);
                         out.println(fase_2);
@@ -91,14 +91,14 @@ public class Promotor extends Thread {
                     try {
                         out = new PrintStream(new FileOutputStream("log_Promotor.txt", true));
                     } catch (Exception e) {
-                        // TODO: handle exception
+                        e.printStackTrace();
                     } finally {
                         out.println(fase);
                     }
                     try {
                         out = new PrintStream(new FileOutputStream("log_Cliente.txt", true));
                     } catch (Exception e) {
-                        // TODO: handle exception
+                        e.printStackTrace();
                     } finally {
                         out.println("[" + venta.GetFecha() + "][Cliente] " + venta.GetCliente() + " sale de la tienda");
                     }

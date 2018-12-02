@@ -16,9 +16,10 @@ public class Tienda {
         try {
             cliente = new PrintStream(new FileOutputStream("log_Cliente.txt", true));
         } catch (Exception e) {
-            // TODO: handle exception
+            e.printStackTrace();
         } finally {
             cliente.println("=============================== "+ venta.GetFecha() +" ===============================");
+            cliente.close();
         }
         while (true) {
             if (venta.GetTurno() == 0) {
@@ -29,7 +30,7 @@ public class Tienda {
                 try {
                     cliente = new PrintStream(new FileOutputStream("log_Cliente.txt", true));
                 } catch (Exception e) {
-                    // TODO: handle exception
+                    e.printStackTrace();
                 } finally {
                     cliente.println("[" + venta.GetFecha() + "][Cliente] " + nombre + " entra a la tienda");
                 }
