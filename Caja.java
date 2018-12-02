@@ -26,11 +26,11 @@ public class Caja extends Thread {
                 String seleccion = reader.next();
                 int n = Integer.parseInt(seleccion);
                 if (n == 1) {
+                    monto += venta.GetValor();
                     String fase_2 = "[" + venta.GetFecha() + "][Caja] Recibio pago por un valor de $" + venta.GetValor()
                             + " via efectivo";
                     String fase_3 = "[" + venta.GetFecha() + "][Caja] Total:$" + monto + " Abono:$" + venta.GetValor();
                     System.out.println(fase_2);
-                    monto += venta.GetValor();
                     System.out.println(fase_3);
                     try {
                         out = new PrintStream(new FileOutputStream("log_Caja.txt", true));
@@ -42,11 +42,11 @@ public class Caja extends Thread {
                     }
                     venta.AddTurno();
                 } else if (n == 2) {
+                    monto += venta.GetValor();
                     String fase_2 = "[" + venta.GetFecha() + "][Caja] Recibio pago por un valor de $" + venta.GetValor()
                             + " via credito";
                     String fase_3 = "[" + venta.GetFecha() + "][Caja] Total:$" + monto + " Abono:$" + venta.GetValor();
                     System.out.println(fase_2);
-                    monto += venta.GetValor();
                     System.out.println(fase_3);
                     try {
                         out = new PrintStream(new FileOutputStream("log_Caja.txt", true));
