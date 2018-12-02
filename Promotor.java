@@ -95,6 +95,13 @@ public class Promotor extends Thread {
                     } finally {
                         out.println(fase);
                     }
+                    try {
+                        out = new PrintStream(new FileOutputStream("log_Cliente.txt", true));
+                    } catch (Exception e) {
+                        // TODO: handle exception
+                    } finally {
+                        out.println("[" + venta.GetFecha() + "][Cliente] " + venta.GetCliente() + " sale de la tienda");
+                    }
                     venta.SetTurno(0);
                 }
             }

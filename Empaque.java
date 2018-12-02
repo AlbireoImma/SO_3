@@ -37,6 +37,13 @@ public class Empaque extends Thread {
                     out.println(fase_1);
                     out.println(fase_2);
                 }
+                try {
+                    out = new PrintStream(new FileOutputStream("log_Cliente.txt", true));
+                } catch (Exception e) {
+                    // TODO: handle exception
+                } finally {
+                    out.println("[" + venta.GetFecha() + "][Cliente] " + venta.GetCliente() + " sale de la tienda con un paquete con "+ venta.GetProducto());
+                }
                 venta.AddTurno();
             }
         }
