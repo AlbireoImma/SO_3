@@ -1,7 +1,5 @@
 import java.io.*;
 import java.util.*;
-import org.mariuszgromada.math.mxparser.*;
-
 
 public class Funciones {
     public static void main(String[] args) {
@@ -11,14 +9,14 @@ public class Funciones {
             FileReader lector = new FileReader(filename);
             BufferedReader reader = new BufferedReader(lector);
             String line;
-            while((line = reader.readLine())!=null){
+            while ((line = reader.readLine()) != null) {
                 System.out.println(line);
                 funciones.add(line);
             }
             reader.close();
             return;
         } catch (Exception e) {
-            System.err.format("Excepcion tratando de leer o abrir: '%s'.",filename);
+            System.err.format("Excepcion tratando de leer o abrir: '%s'.", filename);
             e.printStackTrace();
             return;
         }
