@@ -14,7 +14,7 @@ public class Tienda {
         caja.start();
         empaque.start();
         try {
-            cliente = new PrintStream(new FileOutputStream("log_Cliente.txt", true));
+            cliente = new PrintStream(new FileOutputStream("logs/log_Cliente.txt", true));
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -28,7 +28,7 @@ public class Tienda {
                 String nombre = reader.next();
                 venta.SetCliente(nombre);
                 try {
-                    cliente = new PrintStream(new FileOutputStream("log_Cliente.txt", true));
+                    cliente = new PrintStream(new FileOutputStream("logs/log_Cliente.txt", true));
                 } catch (Exception e) {
                     e.printStackTrace();
                 } finally {

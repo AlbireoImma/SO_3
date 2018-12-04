@@ -16,7 +16,7 @@ public class Empaque extends Thread {
     public void run() {
         Thread.currentThread().setName("Empaque");
         try {
-            out = new PrintStream(new FileOutputStream("log_Empaque.txt", true));
+            out = new PrintStream(new FileOutputStream("logs/log_Empaque.txt", true));
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -30,7 +30,7 @@ public class Empaque extends Thread {
                 System.out.println(fase_1);
                 System.out.println(fase_2);
                 try {
-                    out = new PrintStream(new FileOutputStream("log_Empaque.txt", true));
+                    out = new PrintStream(new FileOutputStream("logs/log_Empaque.txt", true));
                 } catch (Exception e) {
                     e.printStackTrace();
                 } finally {
@@ -38,7 +38,7 @@ public class Empaque extends Thread {
                     out.println(fase_2);
                 }
                 try {
-                    out = new PrintStream(new FileOutputStream("log_Cliente.txt", true));
+                    out = new PrintStream(new FileOutputStream("logs/log_Cliente.txt", true));
                 } catch (Exception e) {
                     e.printStackTrace();
                 } finally {

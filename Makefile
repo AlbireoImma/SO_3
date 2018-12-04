@@ -1,6 +1,6 @@
 tienda:
-	javac Tienda.java
+	javac src/*.java
 run_tienda:
-	java Tienda
+	java src/Tienda
 clean:
-	rm *.class -f
+	rm src/*.class -f
