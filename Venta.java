@@ -19,6 +19,16 @@ public class Venta {
         }
     }
 
+    public void Reset(){
+        synchronized(this){
+            turno = 0;
+            valor = 0;
+            cliente = "";
+            producto = "";
+            fecha = "";
+        }
+    }
+
     public void SetCliente(String A) {
         synchronized (this) {
             cliente = A;

@@ -9,12 +9,14 @@ public class Tienda {
         Promotor promotor = new Promotor(venta, reader);
         Caja caja = new Caja(venta, reader);
         Empaque empaque = new Empaque(venta, reader);
+        Logger logger = new Logger(promotor, venta, caja, empaque, reader);
         PrintStream cliente = null;
         promotor.start();
         caja.start();
         empaque.start();
+        logger.start();
         try {
-            cliente = new PrintStream(new FileOutputStream("logs/log_Cliente.txt", true));
+            cliente = new PrintStream(new FileOutputStream("logs/verbose_Cliente.txt", true));
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -28,7 +30,7 @@ public class Tienda {
                 String nombre = reader.next();
                 venta.SetCliente(nombre);
                 try {
-                    cliente = new PrintStream(new FileOutputStream("logs/log_Cliente.txt", true));
+                    cliente = new PrintStream(new FileOutputStream("logs/verbose_Cliente.txt", true));
                 } catch (Exception e) {
                     e.printStackTrace();
                 } finally {

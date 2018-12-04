@@ -33,3 +33,7 @@ o
 > $ java src/Tienda
 
 <br/>
+
+#### Información Adicional
+
+Para conocer mejor el funcionamiento detallado revisar los logs tipo verbose_funcionalidad.txt

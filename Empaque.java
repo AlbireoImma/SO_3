@@ -13,10 +13,16 @@ public class Empaque extends Thread {
         this.reader = reader;
     }
 
+    public int GetEmpacados(){
+        synchronized(this){
+            return empacados;
+        }
+    }
+
     public void run() {
         Thread.currentThread().setName("Empaque");
         try {
-            out = new PrintStream(new FileOutputStream("logs/log_Empaque.txt", true));
+            out = new PrintStream(new FileOutputStream("logs/verbose_Empaque.txt", true));
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -30,7 +36,7 @@ public class Empaque extends Thread {
                 System.out.println(fase_1);
                 System.out.println(fase_2);
                 try {
-                    out = new PrintStream(new FileOutputStream("logs/log_Empaque.txt", true));
+                    out = new PrintStream(new FileOutputStream("logs/verbose_Empaque.txt", true));
                 } catch (Exception e) {
                     e.printStackTrace();
                 } finally {
@@ -38,7 +44,7 @@ public class Empaque extends Thread {
                     out.println(fase_2);
                 }
                 try {
-                    out = new PrintStream(new FileOutputStream("logs/log_Cliente.txt", true));
+                    out = new PrintStream(new FileOutputStream("logs/verbose_Cliente.txt", true));
                 } catch (Exception e) {
                     e.printStackTrace();
                 } finally {

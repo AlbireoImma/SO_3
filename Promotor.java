@@ -13,10 +13,16 @@ public class Promotor extends Thread {
         this.atendidos = 0;
     }
 
+    public int GetAtendidos(){
+        synchronized(this){
+            return atendidos;
+        }
+    }
+
     public void run() {
         Thread.currentThread().setName("Promotor");
         try {
-            out = new PrintStream(new FileOutputStream("logs/log_Promotor.txt", true));
+            out = new PrintStream(new FileOutputStream("logs/verbose_Promotor.txt", true));
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -40,7 +46,7 @@ public class Promotor extends Thread {
                     System.out.println(fase_1);
                     System.out.println(fase_2);
                     try {
-                        out = new PrintStream(new FileOutputStream("logs/log_Promotor.txt", true));
+                        out = new PrintStream(new FileOutputStream("logs/verbose_Promotor.txt", true));
                     } catch (Exception e) {
                         e.printStackTrace();
                     } finally {
@@ -58,7 +64,7 @@ public class Promotor extends Thread {
                     System.out.println(fase_1);
                     System.out.println(fase_2);
                     try {
-                        out = new PrintStream(new FileOutputStream("logs/log_Promotor.txt", true));
+                        out = new PrintStream(new FileOutputStream("logs/verbose_Promotor.txt", true));
                     } catch (Exception e) {
                         e.printStackTrace();
                     } finally {
@@ -76,7 +82,7 @@ public class Promotor extends Thread {
                     System.out.println(fase_1);
                     System.out.println(fase_2);
                     try {
-                        out = new PrintStream(new FileOutputStream("logs/log_Promotor.txt", true));
+                        out = new PrintStream(new FileOutputStream("logs/verbose_Promotor.txt", true));
                     } catch (Exception e) {
                         e.printStackTrace();
                     } finally {
@@ -89,14 +95,14 @@ public class Promotor extends Thread {
                             + " sin compra por parte del cliente";
                     System.out.println(fase);
                     try {
-                        out = new PrintStream(new FileOutputStream("logs/log_Promotor.txt", true));
+                        out = new PrintStream(new FileOutputStream("logs/verbose_Promotor.txt", true));
                     } catch (Exception e) {
                         e.printStackTrace();
                     } finally {
                         out.println(fase);
                     }
                     try {
-                        out = new PrintStream(new FileOutputStream("logs/log_Cliente.txt", true));
+                        out = new PrintStream(new FileOutputStream("logs/verbose_Cliente.txt", true));
                     } catch (Exception e) {
                         e.printStackTrace();
                     } finally {

@@ -13,10 +13,16 @@ public class Caja extends Thread {
         this.reader = reader;
     }
 
+    public int GetMonto(){
+        synchronized(this){
+            return monto;
+        }
+    }
+
     public void run() {
         Thread.currentThread().setName("Caja");
         try {
-            out = new PrintStream(new FileOutputStream("logs/log_Caja.txt", true));
+            out = new PrintStream(new FileOutputStream("logs/verbose_Caja.txt", true));
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -40,7 +46,7 @@ public class Caja extends Thread {
                     System.out.println(fase_2);
                     System.out.println(fase_3);
                     try {
-                        out = new PrintStream(new FileOutputStream("logs/log_Caja.txt", true));
+                        out = new PrintStream(new FileOutputStream("logs/verbose_Caja.txt", true));
                     } catch (Exception e) {
                         e.printStackTrace();
                     } finally {
@@ -56,7 +62,7 @@ public class Caja extends Thread {
                     System.out.println(fase_2);
                     System.out.println(fase_3);
                     try {
-                        out = new PrintStream(new FileOutputStream("logs/log_Caja.txt", true));
+                        out = new PrintStream(new FileOutputStream("logs/verbose_Caja.txt", true));
                     } catch (Exception e) {
                         e.printStackTrace();
                     } finally {
@@ -70,7 +76,7 @@ public class Caja extends Thread {
                     System.out.println(fase_2);
                     System.out.println(fase_3);
                     try {
-                        out = new PrintStream(new FileOutputStream("logs/log_Caja.txt", true));
+                        out = new PrintStream(new FileOutputStream("logs/verbose_Caja.txt", true));
                     } catch (Exception e) {
                         e.printStackTrace();
                     } finally {
@@ -78,7 +84,7 @@ public class Caja extends Thread {
                         out.println(fase_3);
                     }
                     try {
-                        out = new PrintStream(new FileOutputStream("logs/log_Cliente.txt", true));
+                        out = new PrintStream(new FileOutputStream("logs/verbose_Cliente.txt", true));
                     } catch (Exception e) {
                         e.printStackTrace();
                     } finally {
