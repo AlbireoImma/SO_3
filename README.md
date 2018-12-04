@@ -30,7 +30,7 @@ se debe ejecutar con
 
 o
 
-> $ java src/Tienda
+> $ java Tienda
 
 <br/>
 
