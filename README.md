@@ -12,6 +12,7 @@ Generar el ejecutable<br/>
 Eliminar archivos innecesarios luego de la ejecución <br/>
 
 > $ make clean
+> $ make clean_logs
 
 <br/>
 
