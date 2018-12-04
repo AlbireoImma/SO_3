@@ -90,7 +90,7 @@ public class Caja extends Thread {
                     } finally {
                         out.println("[" + venta.GetFecha() + "][Cliente] " + venta.GetCliente() + " sale de la tienda");
                     }
-                    venta.SetTurno(0);
+                    venta.Reset();
                 }
             }
         }

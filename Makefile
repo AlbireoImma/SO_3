@@ -3,4 +3,6 @@ tienda:
 run_tienda:
 	java Tienda
 clean:
-	rm src/*.class -f
+	rm *.class -f
+clean_logs:
+	rm logs/*.txt -f

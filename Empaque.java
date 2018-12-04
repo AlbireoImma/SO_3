@@ -50,7 +50,7 @@ public class Empaque extends Thread {
                 } finally {
                     out.println("[" + venta.GetFecha() + "][Cliente] " + venta.GetCliente() + " sale de la tienda con un paquete con "+ venta.GetProducto());
                 }
-                venta.AddTurno();
+                venta.Reset();
             }
         }
     }
